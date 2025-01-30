@@ -14,7 +14,7 @@ CNN adalah teknik dalam deep learning yang sangat efektif dalam mengenali pola p
 Dalam penelitian ini, metode CNN dengan model VGG-16 diterapkan untuk mengklasifikasikan jenis tumor otak berdasarkan citra MRI. Tumor otak akan dikategorikan ke dalam empat kelas, yaitu Glioma Tumor, Meningioma Tumor, No Tumor, dan Pituitary Tumor. Tujuan dari penelitian ini adalah untuk mengembangkan sistem klasifikasi berbasis deep learning yang dapat membantu tenaga medis dalam mendiagnosis tumor otak dengan lebih cepat dan akurat. Dengan adanya sistem ini, diharapkan dapat meningkatkan efisiensi diagnosis serta membantu dalam upaya deteksi dini tumor otak, sehingga penanganan dapat dilakukan lebih tepat dan efektif(Septipalan et al., 2024).<br>
 
 # BAB II METODE PENELITIAN <br>
-![Metode](Folder_foto/Evaluasimodel.png) <br>
+![Metode](folder_foto/metode.jpg) <br>
 1.	Persiapan Data <br>
 Langkah pertama dalam pembuatan model ini adalah menyiapkan data yang akan digunakan untuk melatih dan menguji model. Dataset yang digunakan terdiri dari gambar MRI otak yang dibagi menjadi dua kategori, yaitu Tumor dan Normal. Data gambar ini kemudian diubah menjadi format yang dapat diproses oleh model menggunakan ImageDataGenerator.<br>
 
@@ -32,6 +32,7 @@ Setelah pelatihan selesai, evaluasi dilakukan pada model untuk mengukur seberapa
 
 # BAB III HASIL DAN PEMBAHASAN <br>
 ## 3.1 Distribusi Data MRI dalam Dataset <br>
+![Metode](folder_foto/Distribusi.png) <br>
 Sebelum melakukan pelatihan model, sangat penting untuk memahami distribusi data dalam dataset. Pada dataset ini, citra MRI otak dibagi menjadi dua kelas utama: Tumor dan Normal. Dengan melihat jumlah gambar pada setiap kelas, kita dapat memastikan keseimbangan data, yang penting untuk menghindari bias model. Grafik di bawah ini menggambarkan jumlah citra pada masing-masing kelas.<br>
 Contoh grafik distribusi kelas: <br>
 1. Kelas Tumor: Menampilkan jumlah citra MRI yang mengandung tumor.<br>
@@ -43,13 +44,14 @@ Setelah dataset dimuat menggunakan ImageDataGenerator dari Keras, beberapa conto
 1.	Kelas Tumor: Citra MRI yang menunjukkan adanya anomali atau pertumbuhan yang           mengindikasikan adanya tumor.<br>
 2.	Kelas Normal: Citra MRI yang menunjukkan otak yang sehat tanpa tanda-tanda abnormalitas.
     Visualisasi ini membantu kita dalam memverifikasi kualitas data serta memeriksa apakah ada      masalah pada label data.<br>
-
+![Metode](folder_foto/generator.png) <br>
 
 ## 3.3 Proses Training Model CNN (VGG16) <br>
 Model VGG16 digunakan dalam eksperimen ini sebagai feature extractor. Arsitektur VGG16 terkenal karena kedalamannya (16 lapisan) dan kemampuannya dalam menangkap fitur visual penting dari citra.<br>
 1.	Preprocessing dan Augmentasi Data: Sebelum memulai pelatihan, gambar MRI melalui proses augmentasi untuk meningkatkan keragaman dataset. Augmentasi ini mencakup rotasi, zoom, pemotongan acak, dan flipping horizontal untuk memperkenalkan variasi dalam data pelatihan, sehingga model dapat belajar lebih baik.<br>
 2.	Penggunaan VGG16: VGG16 digunakan tanpa pelatihan ulang pada lapisan konvolusinya, tetapi lapisan fully connected yang ada pada bagian akhir model akan diubah untuk tugas klasifikasi biner (Tumor vs. Normal).<br>
 3.	Proses Pelatihan: Model dilatih menggunakan optimizer Adam dan loss function binary cross-entropy selama 10 epoch. Setiap epoch dilalui dengan dataset pelatihan yang telah diaugmentasi. Selama proses ini, model belajar untuk membedakan ciri-ciri khas dari citra tumor dan normal.<br>
+![Metode](folder_foto/Training.png) <br>
 
 ## 3.4 Evaluasi Model CNN (VGG16) <br>
 a.	Confusion Matrix: Evaluasi Kinerja Model <br>
@@ -58,6 +60,7 @@ Confusion matrix memberikan gambaran tentang performa model dalam melakukan klas
 2.	True Negatives (TN): Jumlah gambar yang normal dan diprediksi dengan benar sebagai normal.<br>
 3.	False Positives (FP): Gambar yang normal tetapi diprediksi sebagai tumor (dikenal juga sebagai Type I error).<br>
 4.	False Negatives (FN): Gambar yang mengandung tumor tetapi diprediksi sebagai normal (dikenal juga sebagai Type II error).<br>
+![Metode](folder_foto/Evaluasi.png) <br>
 
 ## 3.5 Evaluasi dengan Clasification Report <br>
 Classification report memberikan ringkasan metrik evaluasi yang lebih komprehensif. Ini mencakup: <br>
@@ -66,6 +69,7 @@ Classification report memberikan ringkasan metrik evaluasi yang lebih komprehens
 3.	F1-Score: Merupakan rata-rata harmonik dari precision dan recall, memberikan gambaran umum tentang performa model.<br>
 4.	Accuracy: Persentase prediksi yang benar dibandingkan dengan total prediksi.
 Classification report ini memberikan wawasan penting mengenai kualitas model dalam kedua kelas.<br>
+![Metode](folder_foto/klasifikasi.png) <br>
 
 # KESIMPULAN <br>
 ## Ringkasan Temuan <br>
