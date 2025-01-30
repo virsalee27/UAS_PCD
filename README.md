@@ -14,7 +14,7 @@ CNN adalah teknik dalam deep learning yang sangat efektif dalam mengenali pola p
 Dalam penelitian ini, metode CNN dengan model VGG-16 diterapkan untuk mengklasifikasikan jenis tumor otak berdasarkan citra MRI. Tumor otak akan dikategorikan ke dalam empat kelas, yaitu Glioma Tumor, Meningioma Tumor, No Tumor, dan Pituitary Tumor. Tujuan dari penelitian ini adalah untuk mengembangkan sistem klasifikasi berbasis deep learning yang dapat membantu tenaga medis dalam mendiagnosis tumor otak dengan lebih cepat dan akurat. Dengan adanya sistem ini, diharapkan dapat meningkatkan efisiensi diagnosis serta membantu dalam upaya deteksi dini tumor otak, sehingga penanganan dapat dilakukan lebih tepat dan efektif(Septipalan et al., 2024).<br>
 
 # BAB II METODE PENELITIAN <br>
-![Metode](Folder_foto/Evaluasi model.png) <br>
+![Metode](Folder_foto/Evaluasimodel.png) <br>
 1.	Persiapan Data <br>
 Langkah pertama dalam pembuatan model ini adalah menyiapkan data yang akan digunakan untuk melatih dan menguji model. Dataset yang digunakan terdiri dari gambar MRI otak yang dibagi menjadi dua kategori, yaitu Tumor dan Normal. Data gambar ini kemudian diubah menjadi format yang dapat diproses oleh model menggunakan ImageDataGenerator.<br>
 
